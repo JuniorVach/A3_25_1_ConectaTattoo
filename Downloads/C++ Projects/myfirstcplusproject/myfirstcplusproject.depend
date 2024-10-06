@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1728156569 source:c:\users\dimer\downloads\c++ projects\myfirstcplusproject\main.cpp
+	<iostream>
+	<cmath>
+	<string>
+	<vector>
+
