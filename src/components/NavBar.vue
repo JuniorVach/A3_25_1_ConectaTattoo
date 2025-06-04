@@ -1,42 +1,70 @@
 <template>
   <q-layout view="hHh lpR fFf">
-    <q-header elevated class="bg-dark text-white">
-      <q-toolbar>
+    <q-header elevated :class="$q.dark.isActive ? 'bg-primary' : 'bg-black'">
+        <q-toolbar>
+          <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
+          <q-toolbar-title>ConectaTattoo</q-toolbar-title>
+          <q-input dense filled debounce="300" v-model="search" placeholder="Search" class="q-mr-sm user-input" />
+          <q-btn flat icon="search" @click="onSearch" />
+        </q-toolbar>
+      </q-header>
 
-        <q-btn flat dense round icon="menu" @click="toggleLeftDrawer" class="q-mr-sm" />
+        <q-drawer
+        v-model="drawer"
+        show-if-above
+        :width="200"
+        :breakpoint="500"
+        >
+        <q-scroll-area class="fit">
+          <q-list padding class="menu-list">
+            <q-item clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="inbox" />
+              </q-item-section>
 
+              <q-item-section>
+                Inbox
+              </q-item-section>
+            </q-item>
+
+            <q-item active clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="star" />
+              </q-item-section>
+
+              <q-item-section>
+                Star
+              </q-item-section>
+            </q-item>
+
+            <q-item clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="send" />
+              </q-item-section>
+
+              <q-item-section>
+                Send
+              </q-item-section>
+            </q-item>
+
+            <q-item clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="drafts" />
+              </q-item-section>
+
+              <q-item-section>
+                Drafts
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-scroll-area>
+      </q-drawer>
+        
         <q-toolbar-title>
           Conecta Tattoo
         </q-toolbar-title>
 
-        <q-btn flat label="Home" to="/" />
-        <q-btn flat label="Artes" to="/artes" />
-
-        <q-btn flat round icon="account_circle">
-          <q-menu>
-            <q-list style="min-width: 150px">
-              <q-item clickable v-close-popup>
-                <q-item-section>Action</q-item-section>
-              </q-item>
-              <q-item clickable v-close-popup>
-                <q-item-section>Another Action</q-item-section>
-              </q-item>
-              <q-separator />
-              <q-item clickable v-close-popup>
-                <q-item-section>Something else here</q-item-section>
-              </q-item>
-            </q-list>
-          </q-menu>
-        </q-btn>
-
         <q-space />
-
-        <q-input dense filled debounce="300" v-model="search" placeholder="Search" class="q-mr-sm" />
-        <q-btn flat icon="search" @click="onSearch" />
-      </q-toolbar>
-    </q-header>
-
-    <!-- Aqui vai o conteúdo das páginas -->
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -48,15 +76,15 @@ import { ref } from 'vue'
 
 const search = ref('')
 
+const drawer = ref(false)
+
 function onSearch () {
   console.log('Searching:', search.value)
-}
-
-function toggleLeftDrawer () {
-  // Função para abrir o menu lateral (se necessário)
 }
 </script>
 
 <style scoped>
-/* Estilos personalizados aqui */
+.user-input input {
+  color: white;
+}
 </style>

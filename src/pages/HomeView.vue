@@ -1,7 +1,7 @@
 <script setup>
 import NavBar from '../components/NavBar.vue'
 import HeroSection from '../components/HeroSection.vue'
-import TattooCircles from '../components/TattooCircles.vue'
+import AdSection from 'src/components/AdSection.vue';
 </script>
 
 <template>
@@ -9,15 +9,14 @@ import TattooCircles from '../components/TattooCircles.vue'
     <NavBar />
     <HeroSection />
     <section id="style-ad">
-      <h1>asaassasa</h1>
-      <TattooCircles />
+      <AdSection />
     </section>
   </main>
 </template>
 
 <style scoped>
-#style-ad {
-  background-color: rgb(200, 61, 61);
-  text-align: center;
+
+.circles {
+  margin-top: 250px;
 }
 </style>
