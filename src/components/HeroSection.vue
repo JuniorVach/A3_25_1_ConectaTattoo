@@ -2,9 +2,7 @@
   <section class="hero">
     <div class="background-text">TATTOO</div>
     <div class="left-column">
-      <div class="diamond-wrapper">
-        <img src="../assets/person-tattoo-home.png" class="diamond-image" />
-      </div>
+      <div class="diamond-wrapper"></div>
     </div>
 
     <div class="right-column">

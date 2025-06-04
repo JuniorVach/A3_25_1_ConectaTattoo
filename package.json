@@ -1,9 +1,9 @@
 {
-  "name": "conecta-tattoo",
+  "name": "teste",
   "version": "0.0.1",
-  "description": "Tattoo Project",
-  "productName": "Conecta Tattoo",
-  "author": "Gabriel Ávila dos Santos <gabrielsnt.avila@gmail.com>",
+  "description": "A Quasar Project",
+  "productName": "Quasar App",
+  "author": "joaoantoniello <jp.torman@gmail.com>",
   "type": "module",
   "private": true,
   "scripts": {

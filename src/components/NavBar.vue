@@ -2,15 +2,12 @@
   <q-layout view="hHh lpR fFf">
     <q-header elevated class="bg-dark text-white">
       <q-toolbar>
-
         <q-btn flat dense round icon="menu" @click="toggleLeftDrawer" class="q-mr-sm" />
 
-        <q-toolbar-title>
-          Conecta Tattoo
-        </q-toolbar-title>
+        <q-toolbar-title> Conecta Tattoo </q-toolbar-title>
 
         <q-btn flat label="Home" to="/" />
-        <q-btn flat label="Artes" to="/artes" />
+        <q-btn flat label="Artes" to="/masc" />
 
         <q-btn flat round icon="account_circle">
           <q-menu>
@@ -31,7 +28,14 @@
 
         <q-space />
 
-        <q-input dense filled debounce="300" v-model="search" placeholder="Search" class="q-mr-sm" />
+        <q-input
+          dense
+          filled
+          debounce="300"
+          v-model="search"
+          placeholder="Search"
+          class="q-mr-sm"
+        />
         <q-btn flat icon="search" @click="onSearch" />
       </q-toolbar>
     </q-header>
@@ -48,11 +52,11 @@ import { ref } from 'vue'
 
 const search = ref('')
 
-function onSearch () {
+function onSearch() {
   console.log('Searching:', search.value)
 }
 
-function toggleLeftDrawer () {
+function toggleLeftDrawer() {
   // Função para abrir o menu lateral (se necessário)
 }
 </script>

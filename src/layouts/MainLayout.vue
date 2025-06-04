@@ -24,8 +24,8 @@
   </q-layout>
 </template>
 
-<script setup>
-import { ref } from 'vue'
+<script>
+import { defineComponent } from 'vue'
 import EssentialLink from 'components/EssentialLink.vue'
 
 const linksList = [
@@ -73,9 +73,24 @@ const linksList = [
   },
 ]
 
-const leftDrawerOpen = ref(false)
+export default defineComponent({
+  name: 'MainLayout',
 
-function toggleLeftDrawer() {
-  leftDrawerOpen.value = !leftDrawerOpen.value
-}
+  components: {
+    EssentialLink,
+  },
+
+  data() {
+    return {
+      linksList,
+      leftDrawerOpen: false,
+    }
+  },
+
+  methods: {
+    toggleLeftDrawer() {
+      this.leftDrawerOpen = !this.leftDrawerOpen
+    },
+  },
+})
 </script>
