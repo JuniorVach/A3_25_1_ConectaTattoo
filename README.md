@@ -1,6 +1,6 @@
-# Conecta Tattoo (conecta-tattoo)
+# Quasar App (teste)
 
-Tattoo Project
+A Quasar Project
 
 ## Install the dependencies
 ```bash
