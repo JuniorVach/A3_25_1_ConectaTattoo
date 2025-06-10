@@ -1,17 +1,16 @@
 <template>
-  <q-layout view="hHh lpR fFf">
-    <NavBar />
-
-    <q-page-container>
-      <q-page>
-        <router-view />
-      </q-page>
-    </q-page-container>
-  </q-layout>
+  <q-page>
+    <HeroSection />
+    <section id="style-ad">
+      <h1>Teste</h1>
+      <TattooCircles />
+    </section>
+  </q-page>
 </template>
 
 <script setup>
-import NavBar from '../components/NavBar.vue'
+import HeroSection from '../components/HeroSection.vue';
+import TattooCircles from '../components/TattooCircles.vue';
 </script>
 
 <style scoped>
