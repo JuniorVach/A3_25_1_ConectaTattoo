@@ -2,17 +2,32 @@
   <q-layout view="hHh lpR fFf">
     <q-header elevated class="bg-dark text-white">
       <q-toolbar>
-        <q-btn flat dense round icon="menu" @click="toggleLeftDrawer" class="q-mr-sm" />
+        <!-- <q-btn flat dense round icon="menu" @click="toggleLeftDrawer" class="q-mr-sm" /> -->
 
         <q-toolbar-title>
           <router-link to="/" class="toolbar-link">
             <q-img :src="LogoTattoo" class="logo-tattoo" />
             <span class="title">Conecta Tattoo</span>
-          </router-link> 
+          </router-link>
         </q-toolbar-title>
 
         <q-btn flat label="Home" to="/" />
-        <q-btn flat label="Artes" to="/artes" />
+        <!-- <q-btn flat label="Artes" to="/artes" /> -->
+        <q-btn-dropdown flat label="Categorias">
+          <q-list>
+            <q-item clickable v-close-popup @click="goToCategoria('masculino')">
+              <q-item-section>
+                <q-item-label>Masculino</q-item-label>
+              </q-item-section>
+            </q-item>
+
+            <q-item clickable v-close-popup @click="goToCategoria('feminino')">
+              <q-item-section>
+                <q-item-label>Feminino</q-item-label>
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-btn-dropdown>
 
         <q-btn flat round icon="account_circle">
           <q-menu>
@@ -33,15 +48,14 @@
 
         <q-space />
 
-        <q-input
+        <!-- <q-input
           dense
           filled
           debounce="300"
           v-model="search"
           placeholder="Search"
           class="q-mr-sm"
-        />
-        <q-btn flat icon="search" @click="onSearch" />
+        /> -->
       </q-toolbar>
     </q-header>
 
@@ -53,17 +67,22 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+// import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import LogoTattoo from '../assets/logo_conecta-tattoo.png'
 
-const search = ref('')
+// const search = ref('')
+const router = useRouter()
 
-function onSearch() {
-  console.log('Searching:', search.value)
-}
+// function onSearch() {
+//   console.log('Searching:', search.value)
+// }
 
-function toggleLeftDrawer() {
-  // Função para abrir o menu lateral (se necessário)
+//function toggleLeftDrawer() {
+// Função para abrir o menu lateral (se necessário)
+//}
+function goToCategoria(tipo) {
+  router.push(`/categorias/${tipo}`)
 }
 </script>
 
@@ -81,10 +100,10 @@ function toggleLeftDrawer() {
   padding: 10px;
   font-weight: bold;
   text-shadow:
-    0.5px 0.5px 0 #8B0000,
-    -0.5px -0.5px 0 #8B0000,
-    0.5px -0.5px 0 #8B0000,
-    -0.5px 0.5px 0 #8B0000;
+    0.5px 0.5px 0 #8b0000,
+    -0.5px -0.5px 0 #8b0000,
+    0.5px -0.5px 0 #8b0000,
+    -0.5px 0.5px 0 #8b0000;
 }
 .toolbar-link {
   display: flex;
