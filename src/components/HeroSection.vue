@@ -5,6 +5,8 @@
       <div class="diamond-wrapper"></div>
     </div>
 
+    <img src="../assets/tattoo1.jpg" alt="Tatuagem" />
+
     <div class="right-column">
       <h1><strong>Conecta</strong>Tattoo</h1>
       <p>
@@ -13,7 +15,7 @@
         Discover unique designs
       </p>
       <button class="cta">PROCURE AGORA</button>
-      <div class="vertical-text">FAZ</div>
+      <div class="vertical-text"></div>
       <div class="arrow">↓</div>
     </div>
   </section>
