@@ -1,124 +1,64 @@
 <template>
-  <section class="hero">
-    <div class="diamond-wrapper"></div>
-
-    <div class="imagem1">
-      <img src="../assets/tatuagens/masculino/Mtattoo1.png" alt="Tatuagem1" />
-    </div>
-
-    <div class="imagem2">
-      <img src="../assets/tatuagens/masculino/Mtattoo2.png" alt="Tatuagem2" />
-    </div>
-
-    <div class="imagem3">
-      <img src="../assets/tatuagens/masculino/Mtattoo3.png" alt="Tatuagem3" />
-    </div>
+  <section id="principal">
+    <figure id="primeira-linha-imagens">
+      <img src="../assets/tatuagens/masculino/Mtattoo1.png" alt="Leão e Jesus" />
+      <img src="../assets/tatuagens/masculino/Mtattoo2.png" alt="Frase na perna" />
+      <img src="../assets/tatuagens/masculino/Mtattoo3.png" alt="Aguia no braço" />
+      <img src="../assets/tatuagens/masculino/Mtattoo4.png" alt="Posseidon" />
+    </figure>
+    <figure id="segunda-linha-imagens">
+      <img src="../assets/tatuagens/masculino/Mtattoo5.png" alt="Barco na costela" />
+      <img src="../assets/tatuagens/masculino/Mtattoo6.png" alt="Cruz e asas e Blessed" />
+      <img src="../assets/tatuagens/masculino/Mtattoo7.png" alt="Tattoo no peito" />
+      <img src="../assets/tatuagens/masculino/Mtattoo8.png" alt="Tattoo nas costas" />
+    </figure>
+    <figure id="terceira-linha-imagens">
+      <img src="../assets/tatuagens/masculino/Mtattoo9.png" alt="Tattoo no braço" />
+      <img src="../assets/tatuagens/masculino/Mtattoo10.png" alt="Tattoo na panturrilha" />
+      <img src="../assets/tatuagens/masculino/Mtattoo11.png" alt="Tattoo na mao" />
+      <img src="../assets/tatuagens/masculino/Mtattoo12.png" alt="Coruja" />
+    </figure>
   </section>
 </template>
 
 <script setup></script>
 
 <style scoped>
-.imagem1 {
-  position: left;
-  left: 20px;
-  height: 10%;
+img {
+  width: 150px;
+  height: 124px;
 }
 
-.imagem2 {
-  position: right;
-  right: 20px;
-
-  height: 10%;
-  width: 10%;
-}
-
-.imagem3 {
-  position: relative;
-  right: 20px;
-
-  height: 10%;
-  width: 10%;
-}
-
-.hero {
+#primeira-linha-imagens,
+#segunda-linha-imagens,
+#terceira-linha-imagens {
+  margin-top: 10px;
   display: flex;
-  width: 97vw;
-  height: 100vh;
-  background: white;
-  overflow: hidden;
-  position: relative;
-}
-
-/* ===== LEFT SIDE ===== */
-
-.diamond-wrapper {
-  width: 300px;
-  height: 600px;
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  z-index: 2;
-  color: gray;
-}
-
-.diamond-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* ===== RIGHT SIDE ===== */
-.right-column {
-  flex: 1;
-  position: relative;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  font-family: var(--caudex);
   align-items: center;
+  gap: 30px;
 }
 
-h1 {
-  font-size: 2.5rem;
-  font-family: var(--unifrakturmaguntia);
-  margin-bottom: 1rem;
+#primeira-linha-imagens img {
+  margin-top: 20px;
 }
 
-p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
+#primeira-linha-imagens img,
+#segunda-linha-imagens img,
+#terceira-linha-imagens img {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+  border-radius: 10px;
 }
 
-.cta {
-  padding: 0.75rem 2rem;
-  background: black;
-  color: white;
-  border: none;
-  border-radius: 1.5rem;
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  width: 70%;
-}
-
-.vertical-text {
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%) rotate(180deg);
-  writing-mode: vertical-rl;
-  font-weight: bold;
-  font-size: 1rem;
-  color: #555;
-}
-
-.arrow {
-  position: absolute;
-  right: 2rem;
-  bottom: 1rem;
-  font-size: 2rem;
-  color: #222;
+/* somente se for abrir a foto */
+#principal #primeira-linha-imagens img:target,
+#principal #segunda-linha-imagens img:target,
+#principal #terceira-linha-imagens img:target {
+  position: fixed;
+  width: 50%;
+  top: 20px;
+  left: 25%;
 }
 </style>
