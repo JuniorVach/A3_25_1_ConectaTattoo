@@ -28,16 +28,13 @@
       <q-btn flat round icon="account_circle">
         <q-menu>
           <q-list style="min-width: 150px">
-            <q-item clickable v-close-popup>
-              <q-item-section>Action</q-item-section>
+            <q-item clickable v-close-popup @click="goToAuth('login')">
+              <q-item-section>Login</q-item-section>
             </q-item>
-            <q-item clickable v-close-popup>
-              <q-item-section>Another Action</q-item-section>
+            <q-item clickable v-close-popup @click="goToAuth('cadastro')">
+              <q-item-section>Cadastrar</q-item-section>
             </q-item>
             <q-separator />
-            <q-item clickable v-close-popup>
-              <q-item-section>Something else here</q-item-section>
-            </q-item>
           </q-list>
         </q-menu>
       </q-btn>
@@ -55,6 +52,10 @@ const router = useRouter()
 
 function goToCategoria(tipo) {
   router.push(`/categorias/${tipo}`)
+}
+
+function goToAuth(tipo) {
+  router.push(`/tatuador?tab=${tipo}`)
 }
 </script>
 
