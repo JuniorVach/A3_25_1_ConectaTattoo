@@ -2,7 +2,9 @@
   <section class="hero">
     <div class="background-text">TATTOO</div>
     <div class="left-column">
-      <div class="diamond-wrapper"></div>
+      <div class="diamond-wrapper">
+        <img src="../assets/diamond-image.png" alt="tattoo-guy" class="diamod-image" />
+      </div>
     </div>
 
     <img src="../assets/tattoo1.jpg" alt="Tatuagem" />
@@ -44,19 +46,23 @@
 }
 
 .diamond-wrapper {
+  position: relative;
   width: 300px;
-  height: 600px;
+  height: 550px;
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: visible;
   z-index: 2;
-  color: gray;
+  margin-top: 2rem;
 }
 
 .diamond-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  position: absolute;
+  top: -120px;
+  left: -50px;
+  width: 400px;
+  height: auto;
+  z-index: 3;
+  pointer-events: none;
 }
 
 .background-text {

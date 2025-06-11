@@ -1,6 +1,8 @@
 import { defineStore } from '#q-app/wrappers'
 import { createPinia } from 'pinia'
 
+import '../assets/fonts/fonts.css'
+
 /*
  * If not building with SSR mode, you can
  * directly export the Store instantiation;
