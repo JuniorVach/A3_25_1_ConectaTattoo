@@ -1,9 +1,64 @@
 <template>
-  <h1>Teste</h1>
+  <section id="principal">
+    <figure id="primeira-linha-imagens">
+      <img src="../assets/tatuagens/feminino/Ftattoo1.png" alt="Flores no braço" />
+      <img src="../assets/tatuagens/feminino/Ftattoo2.png" alt="Peixe nas costas" />
+      <img src="../assets/tatuagens/feminino/Ftattoo3.png" alt="Flores no ombro" />
+      <img src="../assets/tatuagens/feminino/Ftattoo4.png" alt="Leão florido nas costas" />
+    </figure>
+    <figure id="segunda-linha-imagens">
+      <img src="../assets/tatuagens/feminino/Ftattoo5.png" alt="Ramos no peito" />
+      <img src="../assets/tatuagens/feminino/Ftattoo6.png" alt="Flores na costela" />
+      <img src="../assets/tatuagens/feminino/Ftattoo7.png" alt="Índia no quadril" />
+      <img src="../assets/tatuagens/feminino/Ftattoo8.png" alt="Frase no ombro" />
+    </figure>
+    <figure id="terceira-linha-imagens">
+      <img src="../assets/tatuagens/feminino/Ftattoo9.png" alt="Lotus no pulso" />
+      <img src="../assets/tatuagens/feminino/Ftattoo10.png" alt="Lotus atrás da orelha" />
+      <img src="../assets/tatuagens/feminino/Ftattoo11.png" alt="Tartaruga marinha no braço" />
+      <img src="../assets/tatuagens/feminino/Ftattoo12.png" alt="Medusa no braço" />
+    </figure>
+  </section>
 </template>
 
-<script setup>
+<script setup></script>
 
-</script>
+<style scoped>
+img {
+  width: 150px;
+  height: 124px;
+}
 
-<style scoped></style>
+#primeira-linha-imagens,
+#segunda-linha-imagens,
+#terceira-linha-imagens {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+#primeira-linha-imagens img {
+  margin-top: 20px;
+}
+
+#primeira-linha-imagens img,
+#segunda-linha-imagens img,
+#terceira-linha-imagens img {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+/* somente se for abrir a foto */
+#principal #primeira-linha-imagens img:target,
+#principal #segunda-linha-imagens img:target,
+#principal #terceira-linha-imagens img:target {
+  position: fixed;
+  width: 50%;
+  top: 20px;
+  left: 25%;
+}
+</style>
