@@ -9,8 +9,8 @@
         v-model="tab"
         dense
         class="text-grey"
-        active-color="primary"
-        indicator-color="primary"
+        active-color="red-10"
+        indicator-color="red-10"
         align="justify"
         narrow-indicator
       >
@@ -38,7 +38,7 @@
             />
 
             <div>
-              <q-btn label="Entrar" type="submit" color="primary" class="full-width" />
+              <q-btn label="Entrar" type="submit" color="red-10" class="full-width" />
             </div>
           </q-form>
         </q-tab-panel>
@@ -66,7 +66,7 @@
             />
 
             <div>
-              <q-btn label="Cadastrar" type="submit" color="primary" class="full-width" />
+              <q-btn label="Cadastrar" type="submit" color="red-10" class="full-width" />
             </div>
           </q-form>
         </q-tab-panel>
