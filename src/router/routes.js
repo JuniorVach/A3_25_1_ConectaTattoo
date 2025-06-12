@@ -12,12 +12,8 @@ const routes = [
       { path: '', name: 'home', component: HomeView },
       { path: 'categorias/feminino', name: 'categoriaFeminino', component: FemininoPage },
       { path: 'categorias/masculino', name: 'categoriaMasculino', component: MasculinoPage },
+      { path: 'tatuador', name: 'tatuadorAuth', component: TatuadorAuthPage },
     ],
-  },
-  {
-    path: '/tatuador/auth',
-    name: 'tatuadorAuth',
-    component: TatuadorAuthPage,
   },
 
   // Always leave this as last one,
