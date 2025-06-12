@@ -8,6 +8,8 @@
         </router-link>
       </q-toolbar-title>
 
+      <q-space />
+
       <q-btn flat label="Home" to="/" />
       <q-btn-dropdown flat label="Categorias">
         <q-list>
@@ -38,8 +40,6 @@
           </q-list>
         </q-menu>
       </q-btn>
-
-      <q-space />
     </q-toolbar>
   </q-header>
 </template>
