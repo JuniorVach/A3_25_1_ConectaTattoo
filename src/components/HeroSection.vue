@@ -1,134 +1,155 @@
 <template>
-  <section class="hero">
-    <div class="background-text">TATTOO</div>
-    <div class="left-column">
-      <div class="diamond-wrapper">
-        <img src="../assets/diamond-image.png" alt="tattoo-guy" class="diamod-image" />
+  <q-page class="hero-page" :style="heroBackgroundStyle">
+    <video autoplay muted loop class="hero-video">
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-black-ink-in-water-1225-large.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-content">
+      <div class="title-font">
+        <h1 class="hero-title gothic-font">
+          <span class="title-wrapper">
+            Conecta<br />Tattoo
+            <span class="title-icon">☠</span>
+          </span>
+        </h1>
+
+        <p class="hero-subtitle">
+          A <span class="highlight-dark">PELE</span> é nossa <span class="highlight-light">tela</span>
+        </p>
+
+        <div class="button-wrapper">
+          <q-btn
+            class="submit-button"
+            label="Envie sua arte"
+            @click="submitArt"
+          />
+        </div>
       </div>
     </div>
-
-    <img src="../assets/tattoo1.jpg" alt="Tatuagem" />
-
-    <div class="right-column">
-      <h1><strong>Conecta</strong>Tattoo</h1>
-      <p>
-        Connecting artists and enthusiasts<br />
-        Explore the latest trends<br />
-        Discover unique designs
-      </p>
-      <button class="cta">PROCURE AGORA</button>
-      <div class="vertical-text"></div>
-      <div class="arrow">↓</div>
-    </div>
-  </section>
+  </q-page>
 </template>
 
-<script setup></script>
+<script setup>
+import { computed } from 'vue';
 
-<style scoped>
-.hero {
-  display: flex;
-  width: 97vw;
-  height: 100vh;
-  background: white;
+const heroBackgroundStyle = computed(() => ({
+  backgroundImage: "url('https://www.transparenttextures.com/patterns/dark-wood.png')",
+  minHeight: 'calc(100vh - 64px)'
+}));
+</script>
+
+<style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css2?family=Germania+One&family=UnifrakturMaguntia&display=swap');
+
+/* === Layout Principal === */
+.hero-page {
+  position: relative;
+  background-color: #2D2D2D; // bg-gothic
   overflow: hidden;
-  position: relative;
+  border-bottom: 4px solid #8A0303; // border-blood
 }
 
-/* ===== LEFT SIDE ===== */
-.left-column {
-  flex: 1;
-  position: relative;
+/* === Vídeo de fundo === */
+.hero-video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  object-fit: cover;
+}
+
+/* === Container de Conteúdo Central === */
+.hero-content {
+  position: absolute;
+  inset: 0;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: flex-start;
-  padding-left: 2rem;
+  text-align: center;
 }
 
-.diamond-wrapper {
+/* === Fontes === */
+.gothic-font {
+  font-family: 'UnifrakturMaguntia', cursive;
+  text-shadow: 3px 3px 0px #000,
+               6px 6px 0px rgba(138, 3, 3, 0.5),
+               0 0 20px rgba(220, 20, 60, 0.7);
+  letter-spacing: -0.05em;
   position: relative;
-  width: 300px;
-  height: 550px;
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  overflow: visible;
-  z-index: 2;
+}
+
+.title-font {
+  font-family: 'Germania One', cursive;
+}
+
+/* === Título Principal === */
+.hero-title {
+  font-size: 14rem;
+  color: #DC143C; // crimson
+  letter-spacing: 0.25rem;
+  font-family: 'UnifrakturMaguntia', cursive;
+  transform: rotate(10deg);
+  transform-origin: center center;
+  position: relative;
+  top: -40px;
+  margin: 0;
+}
+
+/* === Wrapper interno do título */
+.title-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+/* === Ícone do título */
+.title-icon {
+  position: absolute;
+  bottom: -1rem;
+  right: 0;
+  font-size: 3rem;
+}
+
+/* === Subtítulo === */
+.hero-subtitle {
+  margin-top: 4rem;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #8A0303; // blood
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 1));
+}
+
+/* Destaques */
+.highlight-dark {
+  color: #DC143C;
+}
+
+.highlight-light {
+  color: #fff;
+  text-decoration: underline wavy;
+}
+
+/* === Botão === */
+.button-wrapper {
   margin-top: 2rem;
 }
 
-.diamond-image {
-  position: absolute;
-  top: -120px;
-  left: -50px;
-  width: 400px;
-  height: auto;
-  z-index: 3;
-  pointer-events: none;
-}
-
-.background-text {
-  position: absolute;
-  font-size: 10rem;
-  color: rgba(0, 0, 0, 0.08);
-  z-index: 1;
-  font-weight: bold;
-  top: 20%;
-  pointer-events: none;
-  font-family: var(--almendra);
-  letter-spacing: 10px;
-  text-orientation: mixed;
-}
-
-/* ===== RIGHT SIDE ===== */
-.right-column {
-  flex: 1;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-family: var(--caudex);
-  align-items: center;
-}
-
-h1 {
-  font-size: 2.5rem;
-  font-family: var(--unifrakturmaguntia);
-  margin-bottom: 1rem;
-}
-
-p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-}
-
-.cta {
+.submit-button {
+  background-color: #8A0303; // bg-blood
+  color: #fff;
   padding: 0.75rem 2rem;
-  background: black;
-  color: white;
-  border: none;
-  border-radius: 1.5rem;
+  font-size: 1.125rem;
   font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  width: 70%;
+  border: 2px solid #DC143C;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
 }
 
-.vertical-text {
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%) rotate(180deg);
-  writing-mode: vertical-rl;
-  font-weight: bold;
-  font-size: 1rem;
-  color: #555;
-}
-
-.arrow {
-  position: absolute;
-  right: 2rem;
-  bottom: 1rem;
-  font-size: 2rem;
-  color: #222;
+.submit-button:hover {
+  background-color: #DC143C; // hover:bg-crimson
+  transform: scale(1.05);
 }
 </style>
