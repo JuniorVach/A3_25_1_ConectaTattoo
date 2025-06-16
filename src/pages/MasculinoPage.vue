@@ -24,6 +24,15 @@
 <script setup></script>
 
 <style scoped>
+* {
+  height: 100%;
+  margin: 0%;
+}
+
+section {
+  background-color: var(--q-dark);
+}
+
 img {
   width: 150px;
   height: 124px;
