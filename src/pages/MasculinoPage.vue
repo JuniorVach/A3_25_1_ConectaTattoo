@@ -25,7 +25,6 @@
 
 <style scoped>
 * {
-  height: 100%;
   margin: 0%;
 }
 
