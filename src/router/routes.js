@@ -3,6 +3,8 @@ import HomeView from 'pages/HomeView.vue';
 import FemininoPage from 'pages/FemininoPage.vue';
 import MasculinoPage from 'pages/MasculinoPage.vue';
 import TatuadorAuthPage from 'pages/TatuadorAuthPage.vue';
+import UserAuthPage from 'pages/UserAuthPage.vue';
+import PostTattooPage from 'src/pages/PostTattooPage.vue';
 
 const routes = [
   {
@@ -13,6 +15,8 @@ const routes = [
       { path: 'categorias/feminino', name: 'categoriaFeminino', component: FemininoPage },
       { path: 'categorias/masculino', name: 'categoriaMasculino', component: MasculinoPage },
       { path: 'tatuador', name: 'tatuadorAuth', component: TatuadorAuthPage },
+      { path: 'login', name: 'userAuth', component: UserAuthPage },
+      { path: 'post', name: 'postTattoo', component: PostTattooPage}
     ],
   },
 

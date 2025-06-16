@@ -3,6 +3,7 @@
 
 import { defineConfig } from '#q-app/wrappers'
 
+
 export default defineConfig((/* ctx */) => {
   return {
     // https://v2.quasar.dev/quasar-cli-vite/prefetch-feature
@@ -22,6 +23,7 @@ export default defineConfig((/* ctx */) => {
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
     extras: [
+      'fontawesome-v6',
       // 'ionicons-v4',
       // 'mdi-v7',
       // 'fontawesome-v6',
@@ -80,7 +82,7 @@ export default defineConfig((/* ctx */) => {
     framework: {
       config: {},
 
-      // iconSet: 'material-icons', // Quasar icon set
+      iconSet: 'fontawesome-v5', // Quasar icon set
       // lang: 'en-US', // Quasar language pack
 
       // For special cases outside of where the auto-import strategy can have an impact
