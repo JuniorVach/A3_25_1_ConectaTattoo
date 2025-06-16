@@ -76,7 +76,7 @@ import { ref } from 'vue';
 import { useQuasar } from 'quasar';
 
 const $q = useQuasar();
-const emit = defineEmits(['switch-to-register']);
+// const emit = defineEmits(['switch-to-register']);
 
 const loginData = ref({
     username: '',
@@ -90,7 +90,7 @@ const handleLogin = () => {
             message: 'Por favor, preencha todos os campos.',
             color: 'negative',
             position: 'top',
-            icon: Warning,
+            icon: 'warning',
         });
         return;
     }

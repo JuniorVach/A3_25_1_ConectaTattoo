@@ -63,8 +63,8 @@
         <q-item clickable v-ripple to="/stories" class="text-white hover:text-crimson block px-3 py-2 rounded-md text-base font-medium">
           <q-item-section>Stories</q-item-section>
         </q-item>
-        <q-item clickable v-ripple to="/about" class="text-white hover:text-crimson block px-3 py-2 rounded-md text-base font-medium">
-          <q-item-section>About</q-item-section>
+        <q-item clickable v-ripple to="/categorias/masculino" class="text-white hover:text-crimson block px-3 py-2 rounded-md text-base font-medium">
+          <q-item-section>Masculino</q-item-section>
         </q-item>
       </q-list>
       <div class="pt-4 pb-3 border-t border-blood px-4 flex items-center">
