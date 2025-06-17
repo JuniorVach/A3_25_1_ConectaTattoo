@@ -138,7 +138,7 @@
         <q-item
           clickable
           v-ripple
-          to="/categorias/feminino"
+          to="/feminino"
           class="text-white hover:text-crimson block px-3 py-2 rounded-md text-base font-medium"
         >
           <q-item-section>Feminino</q-item-section>
@@ -146,7 +146,7 @@
         <q-item
           clickable
           v-ripple
-          to="/categorias/masculino"
+          to="/masculino"
           class="text-white hover:text-crimson block px-3 py-2 rounded-md text-base font-medium"
         >
           <q-item-section>Masculino</q-item-section>
