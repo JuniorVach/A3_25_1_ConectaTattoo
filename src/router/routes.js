@@ -17,7 +17,7 @@ const routes = [
       { path: 'masculino', name: 'categoriaMasculino', component: MasculinoPage },
       { path: 'tatuador', name: 'tatuadorAuth', component: TatuadorAuthPage },
       { path: 'login', name: 'userAuth', component: UserAuthPage },
-      { path: 'post', name: 'postTattoo', component: PostTattooPage },
+      { path: 'post', name: 'postTattoo', component: PostTattooPage, meta: { requiresAuth: true } },
       { path: 'choose', name: 'registerOption', component: RegisterOption },
     ],
   },

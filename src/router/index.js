@@ -26,5 +26,23 @@ export default defineRouter(function (/* { store, ssrContext } */) {
     history: createHistory(process.env.VUE_ROUTER_BASE)
   })
 
+  // Guarda de rota para proteger páginas que exigem autenticação
+  Router.beforeEach(async (to, from, next) => {
+    const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+
+    if (requiresAuth) {
+      const isLoggedInTatuador = localStorage.getItem('isLoggedInTatuador') === 'true';
+
+      if (isLoggedInTatuador) {
+        next();
+      } else {
+        console.log('Rota protegida, redirecionando para /tatuador');
+        next('/tatuador'); // Redireciona para a página de login do tatuador
+      }
+    } else {
+      next();
+    }
+  });
+
   return Router
 })
