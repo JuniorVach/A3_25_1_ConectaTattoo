@@ -1,6 +1,10 @@
 <template>
-    <q-page padding class="q-mx-auto" style="max-width: 800px;">
+    <q-page padding class="q-mx-auto bg-dark" style="max-width: 800px;">
         <q-form @submit="onSubmit" class="q-gutter-y-lg">
+            <q-card-section class="text-center text-white">
+                <p>Preencha os detalhes abaixo para fazer o upload de sua nova tatuagem.</p>
+            </q-card-section>
+
             <q-input
                 v-model="formData.title"
                 label="Título do Design"
@@ -20,7 +24,7 @@
                     <q-icon name="fas fa-venus-mars" color="red-10" class="q-mr-sm" />
                     Estilo
                 </label>
-                <q-btn-toggle 
+                <q-btn-toggle
                     v-model="formData.gender"
                     push
                     spread
@@ -74,7 +78,7 @@
                 <div class="col-12 col-sm-6">
                     <q-select
                         v-model="formData.placement"
-                        :optiobs="placementOptions"
+                        :options="placementOptions"
                         label="Localização no corpo"
                         dark
                         standout="bg-grey-10"
@@ -91,7 +95,7 @@
             </div>
 
             <div class="q-pt-md">
-                <q-btn 
+                <q-btn
                     type="submit"
                     label="Enviar design"
                     icon="fas fa-skull"
@@ -105,9 +109,14 @@
 
 <script setup>
 import { ref } from 'vue';
+// useRouter não é mais necessário aqui, pois a funcionalidade de logout foi removida
+// import { useRouter } from 'vue-router';
 
 import ImageUploader from 'src/components/ImageUploader.vue';
 import TagInput from 'src/components/TagInput.vue';
+
+// A instância do router não é mais necessária nesta página
+// const router = useRouter();
 
 const formData = ref ({
     title: '',
@@ -131,10 +140,21 @@ const placementOptions = [
     { label: 'Rosto', value: 'rosto' },
     { label: 'Outro', value: 'outro' }
 ];
+
+const onSubmit = () => {
+  console.log('Dados do formulário para envio:', formData.value);
+  alert('Design enviado com sucesso! (Funcionalidade de salvamento não implementada para demo)');
+};
+
+// A função logoutTatuador foi removida, pois o botão correspondente foi removido.
 </script>
 
 <style scoped>
 .block {
     display: block;
+}
+.btn-blood {
+  background-color: #8a0303;
+  color: white;
 }
 </style>
