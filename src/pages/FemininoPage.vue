@@ -27,40 +27,34 @@ import AppFooter from 'src/components/AppFooter.vue';
 </script>
 
 <style scoped>
-* {
-  margin: 0;
-}
-
-section {
+section#principal {
   background-color: var(--q-dark);
+  padding-top: 20px;
 }
 
 img {
-  width: 150px;
-  height: 124px;
+  width: 300px; /* Definido aqui para todas as imagens, para simplificar */
+  height: 300px; /* Definido aqui para todas as imagens, para simplificar */
+  margin-bottom: 20px;
+  border-radius: 10px;
+  /* Adicionado transição para a animação suave */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer; /* Indica que a imagem é interativa */
+}
+
+/* Efeito de hover */
+img:hover {
+  transform: scale(1.05); /* Aumenta a imagem em 5% */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* Sombra branca suave com desfoque */
 }
 
 #primeira-linha-imagens,
 #segunda-linha-imagens,
 #terceira-linha-imagens {
-  margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 30px;
-}
-
-#primeira-linha-imagens img {
-  margin-top: 20px;
-}
-
-#primeira-linha-imagens img,
-#segunda-linha-imagens img,
-#terceira-linha-imagens img {
-  width: 300px;
-  height: 300px;
-  margin-bottom: 20px;
-  border-radius: 10px;
 }
 
 /* somente se for abrir a foto */
