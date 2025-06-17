@@ -79,7 +79,6 @@ const tattoos = ref ([
 </script>
 
 <style scoped>
-/* Estilos para o TattooGrid, copiados do seu CardGrid.vue */
 .tattoo-grid-container {
     padding: 0 1rem;
     overflow-y: visible;
