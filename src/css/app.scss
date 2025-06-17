@@ -1,1 +1,28 @@
 // app global css in SCSS form
+@import url('https://fonts.googleapis.com/css2?family=Germania+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Germania+One&family=UnifrakturMaguntia&display=swap');
+
+body {
+    background-color: #0a0a0a !important;
+    color: #e5e5e5;
+    font-family: 'Arial', sans-serif;
+}
+
+.gothic-title {
+    font-family: 'UnifrakturMaguntia', cursive;
+    color: crimson;
+    text-shadow: 0 0 10px crimson, 0 0 20px crimson;
+}
+
+.btn-blood {
+    background: linear-gradient(145deg, #dc143c, #990000);
+    color: white;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+}
+
+.btn-blood:hover {
+    background: linear-gradient(145deg, #990000, #dc143c);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
+}
