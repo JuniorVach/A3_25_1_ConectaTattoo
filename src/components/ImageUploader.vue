@@ -69,6 +69,7 @@ const handleFiles = (files) => {
         const reader = new FileReader();
         reader.onload = (e) => {
             imagePreviewUrl.value = e.target.result;
+            emit('update:modelValue', e.target.result);
         };
 
         reader.readAsDataURL(file);

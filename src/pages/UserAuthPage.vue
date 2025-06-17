@@ -60,8 +60,8 @@ const activeTab = ref('login');
     color: #fff;
     font-family: 'Arial', sans-serif;
     background-image:
-        radial-gradient(circle at 10% 20%, rgba(#DC143C, 0.1) 0%, transparent 20%),
-        radial-gradient(circle at 90% 80%, rgba(#DC143C, 0.1) 0%, transparent 20%);
+        radial-gradient(circle at 10% 20%, rgba(220, 20, 60, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(220, 20, 60, 0.1) 0%, transparent 20%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -83,29 +83,29 @@ const activeTab = ref('login');
 .gothic-border {
     border: 1px solid #333;
     position: relative;
+}
 
-    &::before,
-    &::after {
-        content: '';
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        border: 1px solid #DC143C;
-    }
+.gothic-border::before,
+.gothic-border::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #DC143C;
+}
 
-    &::before {
-        top: -1px;
-        left: -1px;
-        border-right: none;
-        border-bottom: none;
-    }
+.gothic-border::before {
+  top: -1px;
+  left: -1px;
+  border-right: none;
+  border-bottom: none;
+}
 
-    &::after {
-        bottom: -1px;
-        right: -1px;
-        border-left: none;
-        border-top: none;
-    }
+.gothic-border::after {
+  bottom: -1px;
+  right: -1px;
+  border-left: none;
+  border-top: none;
 }
 
 .header-section {
@@ -125,30 +125,31 @@ const activeTab = ref('login');
 }
 
 .tabs-container {
-    display: flex;
-    border-bottom: 1px solid rgba(#333, 0.8);
-    margin-bottom: 24px;
-
-    .tab-button {
-        flex: 1;
-        padding-top: 8px;
-        padding-bottom: 8px;
-        font-weight: bold;
-        color: #6b7280;
-        text-transform: uppercase;
-        transition: all 0.3s ease;
-
-        &:hover {
-            color: #DC143C;
-        }
-    }
-
-    .tab-active {
-        border-bottom: 3px solid #DC143C;
-        color:#DC143C;
-        text-shadow: 0 0 5px rgba(#DC143C, 0.5);
-    }
+  display: flex;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.8); /* #333 convertido */
+  margin-bottom: 24px;
 }
+
+.tab-button {
+  flex: 1;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-weight: bold;
+  color: #6b7280;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.tab-button:hover {
+  color: #DC143C;
+}
+
+.tab-active {
+  border-bottom: 3px solid #DC143C;
+  color: #DC143C;
+  text-shadow: 0 0 5px rgba(220, 20, 60, 0.5); /* #DC143C convertido */
+}
+
 
 .form-container {
     padding-bottom: 20px;

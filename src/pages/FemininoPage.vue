@@ -1,5 +1,6 @@
 <template>
   <section id="principal">
+<<<<<<< HEAD
     <figure v-for="(imageRow, rowIndex) in tattooImages" :key="rowIndex" :id="`linha-imagens-${rowIndex}`">
       <img
         v-for="image in imageRow"
@@ -8,7 +9,23 @@
         :alt="image.alt"
         @click="openImageModal(image)"
       />
+=======
+    <figure id="linha-imagens" v-if="femalePosts.length">
+      <div
+        v-for="post in femalePosts"
+        :key="post.id"
+        class="image-wrapper"
+      >
+        <img 
+          :src="post.image"
+          :alt="post.title"
+          loading="lazy"
+          cass="tattoo-image"
+        />
+      </div>
+>>>>>>> 09312ab (add: novas funcionalidades)
     </figure>
+    <p v-else>Carregando</p>
   </section>
   <AppFooter />
 
@@ -17,6 +34,7 @@
 </template>
 
 <script setup>
+<<<<<<< HEAD
 import { ref } from 'vue';
 import AppFooter from 'src/components/AppFooter.vue';
 import ImageModal from '../components/ImageModal.vue';
@@ -65,11 +83,28 @@ const openImageModal = (image) => {
   selectedImage.value = image;
   isModalOpen.value = true;
 };
+=======
+import { onMounted, ref } from 'vue';
+
+const femalePosts = ref([]);
+
+onMounted(async () => {
+  try {
+    const res = await fetch('http://localhost:3000/postagens');
+    const posts = await res.json();
+
+    femalePosts.value = posts.filter(post => post.gender === 'feminino');
+  } catch (error) {
+    console.error('Erro ao buscar postagens:', error);
+  }
+});
+>>>>>>> 09312ab (add: novas funcionalidades)
 </script>
 
 <style scoped>
 section#principal {
   background-color: var(--q-dark);
+<<<<<<< HEAD
   padding-top: 20px;
 }
 
@@ -88,12 +123,16 @@ img:hover {
 }
 
 figure {
+=======
+  padding: 20px;
+>>>>>>> 09312ab (add: novas funcionalidades)
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
+<<<<<<< HEAD
 /* Regras para quando a imagem for o alvo (mantidas, mas o modal é o foco principal) */
 #principal #primeira-linha-imagens img:target,
 #principal #segunda-linha-imagens img:target,
@@ -102,5 +141,22 @@ figure {
   width: 50%;
   top: 20px;
   left: 25%;
+=======
+.image-wrapper {
+  flex: 0 0 300px;
+}
+
+.tattoo-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.tattoo-image:hover {
+  transform: scale(1.05);;
+>>>>>>> 09312ab (add: novas funcionalidades)
 }
 </style>

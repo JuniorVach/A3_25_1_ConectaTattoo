@@ -87,6 +87,7 @@
           icon="person"
           class="ml-3 text-white hover:text-crimson"
           aria-label="Account"
+          @click="handleAccessClick"
         />
       </div>
 
@@ -151,12 +152,24 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
 const mobileMenuOpen = ref(false)
 
 const toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value
+};
+
+const router = useRouter();
+
+function handleAccessClick() {
+  const isLoggedIn = !!localStorage.getItem('user');
+  if (isLoggedIn) {
+    router.push('/perfil');
+  } else {
+    router.push('/login');
+  }
 }
 </script>
 

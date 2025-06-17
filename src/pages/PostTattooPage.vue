@@ -141,12 +141,49 @@ const placementOptions = [
     { label: 'Outro', value: 'outro' }
 ];
 
+<<<<<<< HEAD
 const onSubmit = () => {
   console.log('Dados do formulário para envio:', formData.value);
   alert('Design enviado com sucesso! (Funcionalidade de salvamento não implementada para demo)');
 };
 
 // A função logoutTatuador foi removida, pois o botão correspondente foi removido.
+=======
+const onSubmit = async () => {
+    const postagem = {
+        ...formData.value,
+        likes: 0,
+        comentarios: [],
+        salvamentos: 0
+    };
+
+    try {
+        const response = await fetch('http://localhost:3000/postagens', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(postagem)
+        });
+
+        if (response.ok) {
+            console.log('Postagem salva com sucesso');
+
+            formData.value = {
+                title: '',
+                gender: 'masculino',
+                image: null,
+                description: '',
+                tags: [],
+                size: null,
+                placement: ''
+            };
+        } else {
+            console.error('Erro ao salvar postagem');
+        }
+    } catch (error) {
+        console.error('Erro na requisição:', error);
+    }
+};
+>>>>>>> 09312ab (add: novas funcionalidades)
 </script>
 
 <style scoped>

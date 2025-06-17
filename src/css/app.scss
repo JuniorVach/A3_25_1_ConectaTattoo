@@ -26,3 +26,53 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
 }
+
+.profile-banner-bg {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('https://images.unsplash.com/photo-1511499767150-a48a237f0083?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.tattoo-card {
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+    cursor: pointer;
+}
+
+.tattoo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(220, 20, 60, 0.3);
+    border-color: #e02424;
+}
+
+.badge {
+    background: linear-gradient(145deg, #9b1c1c, #771d1d);
+    text-shadow: 1px 1px 2px black;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #222;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #e5e5e5;
+    border-radius: 4px;
+}
+
+.nav-link.q-tab--active .q-tab__indicator {
+    background-color: #e02424 !important;
+}
+
+.nav-link .q-tab__indicator {
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:hover .q-tab__indicator {
+    background-color: #e5e5e5;
+}
