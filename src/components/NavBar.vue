@@ -111,6 +111,9 @@
       behavior="mobile"
       class="bg-gothic text-white"
     >
+      <div class="q-pa-md text-center">
+        <router-link to="/" class="gothic-font text-3xl text-crimson">Conecta Tattoo</router-link>
+      </div>
       <q-list class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
         <q-item
           clickable
@@ -152,23 +155,23 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { useRouter } from 'vue-router';
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
 const mobileMenuOpen = ref(false)
 
 const toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value
-};
+}
 
-const router = useRouter();
+const router = useRouter()
 
 function handleAccessClick() {
-  const isLoggedIn = !!localStorage.getItem('user');
+  const isLoggedIn = !!localStorage.getItem('user')
   if (isLoggedIn) {
-    router.push('/perfil');
+    router.push('/perfil')
   } else {
-    router.push('/login');
+    router.push('/login')
   }
 }
 </script>
