@@ -23,10 +23,10 @@
           <q-item
             clickable
             v-ripple
-            to="/gallery"
+            to="/"
             class="text-crimson hover:bg-gothic px-3 py-2 rounded-md text-sm font-medium"
           >
-            <q-item-section>Gallery</q-item-section>
+            <q-item-section>Home</q-item-section>
           </q-item>
           <q-item
             clickable
@@ -114,26 +114,10 @@
         <q-item
           clickable
           v-ripple
-          to="/gallery"
+          to="/"
           class="text-crimson block px-3 py-2 rounded-md text-base font-medium"
         >
-          <q-item-section>Gallery</q-item-section>
-        </q-item>
-        <q-item
-          clickable
-          v-ripple
-          to="/artists"
-          class="text-white hover:text-crimson block px-3 py-2 rounded-md text-base font-medium"
-        >
-          <q-item-section>Artists</q-item-section>
-        </q-item>
-        <q-item
-          clickable
-          v-ripple
-          to="/styles"
-          class="text-white hover:text-crimson block px-3 py-2 rounded-md text-base font-medium"
-        >
-          <q-item-section>Styles</q-item-section>
+          <q-item-section>Home</q-item-section>
         </q-item>
         <q-item
           clickable
@@ -157,22 +141,9 @@
           flat
           round
           dense
-          icon="search"
-          class="p-1 rounded-full text-white hover:text-crimson focus:outline-none mr-3"
-        />
-        <q-btn
-          flat
-          round
-          dense
-          icon="cloud_upload"
-          class="p-1 rounded-full text-white hover:text-crimson focus:outline-none mr-3"
-        />
-        <q-btn
-          flat
-          round
-          dense
           icon="person"
           class="p-1 rounded-full text-white hover:text-crimson focus:outline-none"
+          to="/choose"
         />
       </div>
     </q-drawer>
