@@ -21,7 +21,7 @@
                     <h4 class="footer-heading">Company</h4>
                     <ul class="footer-link-list">
                         <li><router-link to="/" class="footer-link">Sobre Nós</router-link></li>
-                        <li><router-link tp="/" class="footer-link">Contato</router-link></li>
+                        <li><router-link to="/" class="footer-link">Contato</router-link></li> <!-- CORRIGIDO: tp para to -->
                         <li><router-link to="/" class="footer-link">Política de Privacidade</router-link></li>
                         <li><router-link to="/" class="footer-link">Termos de Serviço</router-link></li>
                     </ul>
