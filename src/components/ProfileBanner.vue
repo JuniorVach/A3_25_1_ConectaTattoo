@@ -28,8 +28,28 @@
                 <div class="text-grey-5 text-caption">Tattoos</div>
             </div>
             <div>
-                
+                <div class="text-h5 text-weight-bold">{{ user.stats.rating }}</div>
+                <div class="text-grey-5 text-caption">Rating</div>
             </div>
+            <div>
+                <div class="text-h5 text-weight-bold">{{ user.stats.followers }}</div>
+                <div class="text-grey-5 text-caption">Followers</div>
+            </div>
+        </div>
+
+        <p class="text-grey-4 text-center q-mb-lg" style="max-width: 600px; margin: 0 auto">
+            {{ user.bio.split('Black Veil Bride')[0] }}
+            <span class="text-accent">{{ user.studio }}</span>
+            {{ user.bio.split('Black Veils Bride')[1] }}
+        </p>
+
+        <div class="row justify-center q-gutter-md q-mt-lg q-pb-lg">
+            <q-btn color="primary" unelevated icon="fas fa-envelope" label="Contact"/>
+            <q-btn 
+                outline
+                style="background-color: rgba(0,0,0,0.7); border-color: #555;"
+                icon="fas fa-bookmark"
+            />
         </div>
     </div>
 </template>

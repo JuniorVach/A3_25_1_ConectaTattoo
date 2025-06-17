@@ -1,8 +1,9 @@
 <template>
   <section id="principal">
+    <!-- Imagens Estáticas Locais -->
     <figure
       v-for="(imageRow, rowIndex) in tattooImages"
-      :key="rowIndex"
+      :key="'local-' + rowIndex"
       :id="`linha-imagens-${rowIndex}`"
     >
       <img
@@ -10,21 +11,59 @@
         :key="image.src"
         :src="image.src"
         :alt="image.alt"
+        class="tattoo-image"
         @click="openImageModal(image)"
       />
     </figure>
+
+    <!-- Imagens de API -->
+    <figure v-if="femalePosts.length" id="linha-imagens-api">
+      <div
+        v-for="post in femalePosts"
+        :key="post.id"
+        class="image-wrapper"
+      >
+        <img
+          :src="post.image"
+          :alt="post.title"
+          class="tattoo-image"
+          @click="openImageModal({
+            src: post.image,
+            alt: post.title,
+            artist: post.artist,
+            description: post.description,
+            style: post.style,
+            location: post.location,
+          })"
+        />
+      </div>
+    </figure>
+
+    <p v-else>Carregando...</p>
   </section>
+
   <AppFooter />
 
-  <!-- Componente ImageModal -->
+  <!-- Modal para qualquer imagem -->
   <ImageModal v-model="isModalOpen" :image="selectedImage" />
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import AppFooter from 'src/components/AppFooter.vue'
 import ImageModal from '../components/ImageModal.vue'
 
+// Modal
+const isModalOpen = ref(false)
+const selectedImage = ref({})
+
+// Função do modal
+const openImageModal = (image) => {
+  selectedImage.value = image
+  isModalOpen.value = true
+}
+
+// Imagens locais
 import Ftattoo1 from '../assets/tatuagens/feminino/Ftattoo1.png'
 import Ftattoo2 from '../assets/tatuagens/feminino/Ftattoo2.png'
 import Ftattoo3 from '../assets/tatuagens/feminino/Ftattoo3.png'
@@ -38,11 +77,6 @@ import Ftattoo10 from '../assets/tatuagens/feminino/Ftattoo10.png'
 import Ftattoo11 from '../assets/tatuagens/feminino/Ftattoo11.png'
 import Ftattoo12 from '../assets/tatuagens/feminino/Ftattoo12.png'
 
-// Variáveis para controlar o modal
-const isModalOpen = ref(false)
-const selectedImage = ref({})
-
-// Dados para as imagens de tatuagem
 const tattooImages = ref([
   [
     {
@@ -148,46 +182,50 @@ const tattooImages = ref([
   ],
 ])
 
-// Função para abrir o modal
-const openImageModal = (image) => {
-  selectedImage.value = image
-  isModalOpen.value = true
-}
+// Imagens da API
+const femalePosts = ref([])
+
+onMounted(async () => {
+  try {
+    const res = await fetch('http://localhost:3000/postagens')
+    const posts = await res.json()
+    femalePosts.value = posts.filter(post => post.gender === 'feminino')
+  } catch (error) {
+    console.error('Erro ao buscar postagens:', error)
+  }
+})
 </script>
 
 <style scoped>
 section#principal {
   background-color: var(--q-dark);
-  padding-top: 20px;
-}
-
-img {
-  width: 300px;
-  height: 300px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  transition:
-    transform 0.3s ease-in-out,
-    box-shadow 0.3s ease-in-out;
-  cursor: pointer;
-}
-
-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
 }
 
 figure {
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
   gap: 30px;
 }
 
-#principal figure img:target {
-  position: fixed;
-  width: 50%;
-  top: 20px;
-  left: 25%;
+img {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+}
+
+.tattoo-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 </style>

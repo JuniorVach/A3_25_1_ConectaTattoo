@@ -24,6 +24,7 @@
             <q-tab-panels v-model="tab" animated class="bg-transparent">
                 <q-tab-panel name="portfolio">
                     <!--TATTOO GALLERY-->
+                    <TattooGallery :tattoos="tattoos" />
                     <div class="flex flex-center q-mt-xl">
                         <q-pagination
                             v-model="pagination"
@@ -54,7 +55,7 @@
 <script setup>
 import { ref } from 'vue';
 import ProfileBanner from 'src/components/ProfileBanner.vue';
-import CardGrid from 'src/components/CardGrid.vue';
+import TattooGallery from 'src/components/TattooGallery.vue';
 
 const tab = ref ('portfolio')
 const pagination = ref(1);
@@ -102,22 +103,4 @@ const tattoos = ref ([
         grid-template-columns: repeat(3, 1fr);
     }
 }
-
-/* Se você quiser que a rolagem seja no container pai da página */
-/* .tattoo-grid-container::-webkit-scrollbar {
-    width: 10px;
-}
-
-.tattoo-grid-container::-webkit-scrollbar-track {
-    background: #2D2D2D;
-    border-radius: 10px;
-}
-
-.tattoo-grid-container::-webkit-scrollbar-thumb {
-    background: #8A0303;
-    border-radius: 10px;
-    &:hover {
-        background: #DC143C;
-    }
-} */
 </style>
