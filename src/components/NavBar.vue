@@ -122,22 +122,6 @@
         <q-item
           clickable
           v-ripple
-          to="/artists"
-          class="text-white hover:text-crimson block px-3 py-2 rounded-md text-base font-medium"
-        >
-          <q-item-section>Artists</q-item-section>
-        </q-item>
-        <q-item
-          clickable
-          v-ripple
-          to="/styles"
-          class="text-white hover:text-crimson block px-3 py-2 rounded-md text-base font-medium"
-        >
-          <q-item-section>Styles</q-item-section>
-        </q-item>
-        <q-item
-          clickable
-          v-ripple
           to="/feminino"
           class="text-white hover:text-crimson block px-3 py-2 rounded-md text-base font-medium"
         >
@@ -153,20 +137,6 @@
         </q-item>
       </q-list>
       <div class="pt-4 pb-3 border-t border-blood px-4 flex items-center">
-        <q-btn
-          flat
-          round
-          dense
-          icon="search"
-          class="p-1 rounded-full text-white hover:text-crimson focus:outline-none mr-3"
-        />
-        <q-btn
-          flat
-          round
-          dense
-          icon="cloud_upload"
-          class="p-1 rounded-full text-white hover:text-crimson focus:outline-none mr-3"
-        />
         <q-btn
           flat
           round
