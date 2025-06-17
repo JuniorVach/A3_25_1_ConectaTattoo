@@ -1,5 +1,5 @@
 <template>
-    <q-page>
+    <q-page class="q-pa-md">
         <!--PROFILE BANNER-->
         <ProfileBanner :user="artistProfile" />
 
@@ -25,7 +25,7 @@
                 <q-tab-panel name="portfolio">
                     <!--TATTOO GALLERY-->
                     <div class="flex flex-center q-mt-xl">
-                        <q-pagination 
+                        <q-pagination
                             v-model="pagination"
                             :ma="8"
                             direction-links
@@ -35,6 +35,7 @@
                             boundary-numbers
                         />
                     </div>
+                    <CardGrid :tattoos="tattoos" class="q-mt-md" />
                 </q-tab-panel>
                 <q-tab-panel name="saved">
                     <div class="text-center text-grey">Conteúdo da aba 'Saved aqui.'</div>
@@ -53,6 +54,7 @@
 <script setup>
 import { ref } from 'vue';
 import ProfileBanner from 'src/components/ProfileBanner.vue';
+import CardGrid from 'src/components/CardGrid.vue';
 
 const tab = ref ('portfolio')
 const pagination = ref(1);
@@ -71,10 +73,52 @@ const artistProfile = ref ({
 });
 
 const tattoos = ref ([
-    {id: 1, title: 'Dark Angel', style: 'Back & Grey, Full Black Piece', date: 'Jun 2023', likes: 42, comments: 8, img: 'https://images.unsplash.com/photo-1611689347400-613a95a6a9d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'},
-    {id: 2, title: 'Gothic Rose', style: 'Traditional, Thigh Piece', date: 'Apr 2023', likes: 67, comments: 12, img: 'https://images.unsplash.com/photo-1560727840-0a15d6533647?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80'},
+    {id: 1, title: 'Dark Angel', style: 'Back & Grey, Full Black Piece', date: 'Jun 2023', likes: 42, comments: 8, imgSrc: 'https://images.unsplash.com/photo-1611689347400-613a95a6a9d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'},
+    {id: 2, title: 'Gothic Rose', style: 'Traditional, Thigh Piece', date: 'Apr 2023', likes: 67, comments: 12, imgSrc: 'https://images.unsplash.com/photo-1560727840-0a15d6533647?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80'},
 ]);
 </script>
 
 <style scoped>
+/* Estilos para o TattooGrid, copiados do seu CardGrid.vue */
+.tattoo-grid-container {
+    padding: 0 1rem;
+    overflow-y: visible;
+    height: 100%;
+}
+
+.tattoo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 32px;
+    padding-bottom: 20px;
+    justify-content: center;
+
+    overflow: visible;
+    position: relative;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Se você quiser que a rolagem seja no container pai da página */
+/* .tattoo-grid-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.tattoo-grid-container::-webkit-scrollbar-track {
+    background: #2D2D2D;
+    border-radius: 10px;
+}
+
+.tattoo-grid-container::-webkit-scrollbar-thumb {
+    background: #8A0303;
+    border-radius: 10px;
+    &:hover {
+        background: #DC143C;
+    }
+} */
 </style>
