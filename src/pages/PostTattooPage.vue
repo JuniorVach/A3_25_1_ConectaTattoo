@@ -141,14 +141,6 @@ const placementOptions = [
     { label: 'Outro', value: 'outro' }
 ];
 
-<<<<<<< HEAD
-const onSubmit = () => {
-  console.log('Dados do formulário para envio:', formData.value);
-  alert('Design enviado com sucesso! (Funcionalidade de salvamento não implementada para demo)');
-};
-
-// A função logoutTatuador foi removida, pois o botão correspondente foi removido.
-=======
 const onSubmit = async () => {
     const postagem = {
         ...formData.value,
@@ -183,7 +175,6 @@ const onSubmit = async () => {
         console.error('Erro na requisição:', error);
     }
 };
->>>>>>> 09312ab (add: novas funcionalidades)
 </script>
 
 <style scoped>
