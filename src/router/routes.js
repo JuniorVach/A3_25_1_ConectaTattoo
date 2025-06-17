@@ -5,6 +5,7 @@ import MasculinoPage from 'pages/MasculinoPage.vue';
 import TatuadorAuthPage from 'pages/TatuadorAuthPage.vue';
 import UserAuthPage from 'pages/UserAuthPage.vue';
 import PostTattooPage from 'src/pages/PostTattooPage.vue';
+import RegisterOption from 'src/pages/RegisterOption.vue';
 
 const routes = [
   {
@@ -16,7 +17,8 @@ const routes = [
       { path: 'categorias/masculino', name: 'categoriaMasculino', component: MasculinoPage },
       { path: 'tatuador', name: 'tatuadorAuth', component: TatuadorAuthPage },
       { path: 'login', name: 'userAuth', component: UserAuthPage },
-      { path: 'post', name: 'postTattoo', component: PostTattooPage}
+      { path: 'post', name: 'postTattoo', component: PostTattooPage},
+      { path: 'choose', name: 'registerOption', component: RegisterOption }
     ],
   },
 
