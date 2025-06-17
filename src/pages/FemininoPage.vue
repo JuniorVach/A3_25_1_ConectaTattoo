@@ -19,10 +19,8 @@
 <script setup>
 import { ref } from 'vue';
 import AppFooter from 'src/components/AppFooter.vue';
-import ImageModal from '../components/ImageModal.vue'; // Importar o novo componente modal
+import ImageModal from '../components/ImageModal.vue';
 
-// --- IMPORTAÇÃO DIRETA DAS IMAGENS FEMININAS ---
-// Certifique-se de que estes caminhos e nomes de arquivo correspondem exatamente aos seus assets.
 import Ftattoo1 from '../assets/tatuagens/feminino/Ftattoo1.png';
 import Ftattoo2 from '../assets/tatuagens/feminino/Ftattoo2.png';
 import Ftattoo3 from '../assets/tatuagens/feminino/Ftattoo3.png';
@@ -35,7 +33,6 @@ import Ftattoo9 from '../assets/tatuagens/feminino/Ftattoo9.png';
 import Ftattoo10 from '../assets/tatuagens/feminino/Ftattoo10.png';
 import Ftattoo11 from '../assets/tatuagens/feminino/Ftattoo11.png';
 import Ftattoo12 from '../assets/tatuagens/feminino/Ftattoo12.png';
-// --- FIM DA IMPORTAÇÃO DIRETA ---
 
 // Variáveis para controlar o modal
 const isModalOpen = ref(false);

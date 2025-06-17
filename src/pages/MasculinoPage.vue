@@ -19,10 +19,8 @@
 <script setup>
 import { ref } from 'vue';
 import AppFooter from 'src/components/AppFooter.vue';
-import ImageModal from '../components/ImageModal.vue'; // Importar o novo componente modal
+import ImageModal from '../components/ImageModal.vue';
 
-// --- IMPORTAÇÃO DIRETA DAS IMAGENS ---
-// Certifique-se de que estes caminhos e nomes de arquivo correspondem exatamente aos seus assets.
 import Mtattoo1 from '../assets/tatuagens/masculino/Mtattoo1.png';
 import Mtattoo2 from '../assets/tatuagens/masculino/Mtattoo2.png';
 import Mtattoo3 from '../assets/tatuagens/masculino/Mtattoo3.png';
@@ -35,15 +33,12 @@ import Mtattoo9 from '../assets/tatuagens/masculino/Mtattoo9.png';
 import Mtattoo10 from '../assets/tatuagens/masculino/Mtattoo10.png';
 import Mtattoo11 from '../assets/tatuagens/masculino/Mtattoo11.png';
 import Mtattoo12 from '../assets/tatuagens/masculino/Mtattoo12.png';
-// --- FIM DA IMPORTAÇÃO DIRETA ---
-
 
 // Variáveis para controlar o modal
 const isModalOpen = ref(false);
 const selectedImage = ref({});
 
 // Dados para as imagens de tatuagem
-// AGORA UTILIZANDO AS VARIÁVEIS IMPORTADAS PARA OS 'src'
 const tattooImages = ref([
   [
     { src: Mtattoo1, alt: 'Leão e Jesus', artist: 'Artista X', description: 'Tatuagem detalhada de leão e figura religiosa.', style: 'Realismo Preto e Cinza', location: 'Braço' },

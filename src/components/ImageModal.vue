@@ -6,7 +6,6 @@
       <q-card-section class="q-card-section-content">
         <div class="flex items-center justify-between q-mb-sm">
           <div class="text-h6 text-crimson">{{ image.alt }}</div>
-          <!-- Botão 'X' no canto oposto com cor 'blood' -->
           <q-btn flat round icon="close" color="blood" @click="closeModal" />
         </div>
         <div class="text-gothic-light text-body2">
@@ -54,17 +53,14 @@ const onHide = () => {
 
 <style scoped>
 .image-modal-card {
-  /* O card se ajusta ao conteúdo, mas com limites */
   width: auto;
-  /* max-width foi ajustado para acomodar a nova largura da imagem + padding */
-  max-width: 500px; /* (450px da imagem + padding) */
-  max-height: 90vh; /* Máximo 90% da altura da viewport */
+  max-width: 500px;
+  max-height: 90vh;
   background-color: #2d2d2d;
   color: #fff;
   display: flex;
   flex-direction: column;
   overflow: auto;
-  /* Sombra de caixa adicionada ao card */
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
@@ -75,12 +71,12 @@ const onHide = () => {
 }
 
 .image-display {
-  width: 425px; /* Largura fixa da área da imagem (500px - 10%) */
-  height: 425px; /* Altura fixa da área da imagem (500px - 10%) */
-  object-fit: contain; /* Garante que a imagem inteira seja visível sem cortar, ajustando-se à área fixa */
+  width: 425px;
+  height: 425px;
+  object-fit: contain;
   background-color: #000;
-  margin: auto; /* Centraliza a imagem horizontal e verticalmente dentro da área fixa */
-  display: block; /* Garante que 'margin: auto' funcione */
+  margin: auto;
+  display: block;
 }
 
 .text-gothic-light {
