@@ -19,9 +19,12 @@
       <img src="../assets/tatuagens/masculino/Mtattoo12.png" alt="Coruja" />
     </figure>
   </section>
+  <AppFooter />
 </template>
 
-<script setup></script>
+<script setup>
+import AppFooter from 'src/components/AppFooter.vue';
+</script>
 
 <style scoped>
 * {

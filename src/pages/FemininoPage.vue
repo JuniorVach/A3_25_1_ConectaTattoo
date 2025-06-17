@@ -19,9 +19,12 @@
       <img src="../assets/tatuagens/feminino/Ftattoo12.png" alt="Medusa no braço" />
     </figure>
   </section>
+  <AppFooter />
 </template>
 
-<script setup></script>
+<script setup>
+import AppFooter from 'src/components/AppFooter.vue';
+</script>
 
 <style scoped>
 * {
