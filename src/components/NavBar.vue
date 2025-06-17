@@ -23,10 +23,10 @@
           <q-item
             clickable
             v-ripple
-            to="/gallery"
+            to="/"
             class="text-crimson hover:bg-gothic px-3 py-2 rounded-md text-sm font-medium"
           >
-            <q-item-section>Gallery</q-item-section>
+            <q-item-section>Home</q-item-section>
           </q-item>
           <q-item
             clickable
@@ -114,10 +114,10 @@
         <q-item
           clickable
           v-ripple
-          to="/gallery"
+          to="/"
           class="text-crimson block px-3 py-2 rounded-md text-base font-medium"
         >
-          <q-item-section>Gallery</q-item-section>
+          <q-item-section>Home</q-item-section>
         </q-item>
         <q-item
           clickable
@@ -173,6 +173,7 @@
           dense
           icon="person"
           class="p-1 rounded-full text-white hover:text-crimson focus:outline-none"
+          to="/choose"
         />
       </div>
     </q-drawer>
