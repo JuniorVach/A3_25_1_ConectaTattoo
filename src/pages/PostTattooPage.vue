@@ -109,14 +109,9 @@
 
 <script setup>
 import { ref } from 'vue';
-// useRouter não é mais necessário aqui, pois a funcionalidade de logout foi removida
-// import { useRouter } from 'vue-router';
 
 import ImageUploader from 'src/components/ImageUploader.vue';
 import TagInput from 'src/components/TagInput.vue';
-
-// A instância do router não é mais necessária nesta página
-// const router = useRouter();
 
 const formData = ref ({
     title: '',
