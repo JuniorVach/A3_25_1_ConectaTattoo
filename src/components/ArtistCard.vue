@@ -1,13 +1,13 @@
 <template>
-    <q-card class="artist-card">
-        <q-img :src="artist.imageSrc" :alt="artist.name" class="artist-avatar"/>
+    <q-card class="artist-card" v-for="data in artistas">
+        <q-img :src="data.imageSrc" :alt="data.name" class="artist-avatar"/>
         <q-card-section class="artist-info">
-            <h3 class="artist-name">{{ artist.name }}</h3>
+            <h3 class="artist-name">{{ data.name }}</h3>
             <p class="artist-specialty">{{ artist.specialty }}</p>
 
             <div class="artist-tags">
                 <q-chip
-                    v-for="tag in artist.tags"
+                    v-for="tag in data.tags"
                     :key="tag"
                     dense
                     class="artist-tag"
@@ -16,18 +16,32 @@
                 </q-chip>
             </div>
 
-            <p class="artist-quote">{{ artist.quote }}</p>
+            <p class="artist-quote">{{ artistas.quote }}</p>
 
             <q-btn 
                 label="Ver Perfil"
                 class="view-profile-btn"
                 @click="viewProfile"
+                :to="`/perfil/${artist.id}`"
             />
         </q-card-section>
     </q-card>
 </template>
 
 <script setup>
+import { onMounted, ref } from 'vue';
+
+const artistas = ref ([]);
+
+onMounted(async () => {
+    try {
+        const res = await fetch('http://localhost:3000/artistas')
+        const data = await res.json();
+        artistas.value = data;
+    } catch (error) {
+    console.error('Erro ao buscar artistas:', error);
+  }
+});
 //import { useQuasar } from 'quasar';
 
 defineProps ({
@@ -48,7 +62,7 @@ defineProps ({
 //const $q = useQuasar();
 
 const viewProfile = () => {
-    //CODIGO PARA ENTRAR NO PERFIL
+
 };
 </script>
 

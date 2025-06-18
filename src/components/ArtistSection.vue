@@ -3,41 +3,28 @@
         <h2 class="title-font artist-spotlight-heading">Artistas em Destaque</h2>
 
         <div class="artist-grid">
-            <ArtistCard v-for="artist in artists" :key="artist.id" :artist="artist" />
+            <ArtistCard v-for="data in artistas" :key="data.id" :artist="artistas" to="/perfil" />
         </div>
     </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import ArtistCard from './ArtistCard.vue';
+import { useRoute } from 'vue-router';
 
-const artists = ref ([
-    {
-        id: 1,
-        imageSrc: "https://randomuser.me/api/portraits/women/91.jpg",
-        name: "Nyx Void",
-        specialty: "Especialista em tattos Dark",
-        tags: ["Gothic", "Blackwork", "Horror"],
-        quote: '"..."'
-    },
-    {
-        id: 2,
-        imageSrc: "https://randomuser.me/api/portraits/men/47.jpg",
-        name: "Lucifer Noire",
-        specialty: "Ilustrador Ocultista",
-        tags: ["Occult", "Dark Art", "Black & Grey"],
-        quote: '"..."'
-    },
-    {
-        id: 3,
-        imageSrc: "https://randomuser.me/api/portraits/women/68.jpg",
-        name: "Seraphine Shadow",
-        specialty: "Tatuador de Fantasias",
-        tags: ["Fantasy", "Mythology", "Neo-Traditional"],
-        quote: '"..."'
-    },
-]);
+const artistas = ref ([]);
+
+
+onMounted(async () => {
+    try {
+        const res = await fetch('http://localhost:3000/artistas')
+        const data = await res.json();
+        artistas.value = data;
+    } catch (error) {
+    console.error('Erro ao buscar artistas:', error);
+  };
+})
 </script>
 
 <style scoped>

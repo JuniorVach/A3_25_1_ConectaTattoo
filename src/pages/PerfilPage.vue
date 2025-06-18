@@ -4,6 +4,7 @@
         <ProfileBanner :user="artistProfile" />
 
         <div class="q-pa-md" style="max-width: 1400px; margin: 0 auto;">
+            <ArtistCard />
             <q-tabs
                 v-model="tab"
                 dense
@@ -54,9 +55,12 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useRoute } from 'vue-router';
 import ProfileBanner from 'src/components/ProfileBanner.vue';
 import TattooGallery from 'src/components/TattooGallery.vue';
+import ArtistCard from 'src/components/ArtistCard.vue';
 
+const idPerfil = useRoute().params.id;
 const tab = ref ('portfolio')
 const pagination = ref(1);
 

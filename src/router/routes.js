@@ -20,7 +20,7 @@ const routes = [
       { path: 'login', name: 'userAuth', component: UserAuthPage },
       { path: 'post', name: 'postTattoo', component: PostTattooPage},
       { path: 'choose', name: 'registerOption', component: RegisterOption },
-      { path: 'perfil', name: 'perfilPage', component: PerfilPage }
+      { path: 'perfil/:id', name: 'perfilPage', component: PerfilPage }
     ],
   },
 
